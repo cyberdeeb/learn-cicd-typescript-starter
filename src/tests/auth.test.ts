@@ -24,4 +24,11 @@ describe("getAPIKey", () => {
     };
     expect(getAPIKey(headers)).toBe("mySecretKey");
   });
+
+  it("should handle multiple spaces in authorization header", () => {
+    const headers: IncomingHttpHeaders = {
+      authorization: "ApiKey   testKey123",
+    };
+    expect(getAPIKey(headers)).toBe("testKey123");
+  });
 });
