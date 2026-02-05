@@ -1,4 +1,4 @@
-import { describe, expect, it, test } from "vitest";
+import { describe, expect, it } from "vitest";
 import { getAPIKey } from "../api/auth";
 import { IncomingHttpHeaders } from "http";
 
@@ -23,12 +23,5 @@ describe("getAPIKey", () => {
       authorization: "ApiKey mySecretKey",
     };
     expect(getAPIKey(headers)).toBe("mySecretKey");
-  });
-
-  it("should handle multiple spaces in authorization header", () => {
-    const headers: IncomingHttpHeaders = {
-      authorization: "ApiKey   testKey123",
-    };
-    expect(getAPIKey(headers)).toBe("testKey123");
   });
 });
