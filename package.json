@@ -4,9 +4,9 @@
   "main": "dist/main.js",
   "type": "module",
   "scripts": {
-    "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
-    "db:studio": "drizzle-kit studio",
+    "db:generate": "./node_modules/.bin/drizzle-kit generate",
+    "db:migrate": "./node_modules/.bin/drizzle-kit migrate",
+    "db:studio": "./node_modules/.bin/drizzle-kit studio",
     "build": "npx tsc",
     "start": "node dist/main.js",
     "dev": "npx tsc && node dist/main.js",
